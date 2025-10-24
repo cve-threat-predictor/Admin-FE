@@ -1,7 +1,9 @@
-"use client"
+"use client";
 
-import ComingSoonPage from "../coming-soon"
+// app/page.tsx
+// 레포 루트에 있는 coming-soon.tsx를 불러옵니다.
+import ComingSoonPage from "../coming-soon";
 
-export default function SyntheticV0PageForDeployment() {
-  return <ComingSoonPage />
+export default function Home() {
+  return <ComingSoonPage />;
 }
