@@ -90,7 +90,7 @@ coming-soon/
 
 프로젝트는 다음 경로에 있습니다:
 ```
-C:\Users\박성호\OneDrive\바탕 화면\coming-soon
+C:\Users\사용자ID\OneDrive\바탕 화면\coming-soon
 ```
 
 ### 3️⃣ 의존성 설치
@@ -99,7 +99,7 @@ C:\Users\박성호\OneDrive\바탕 화면\coming-soon
 
 ```bash
 # 프로젝트 폴더로 이동
-cd "C:\Users\박성호\OneDrive\바탕 화면\coming-soon"
+cd "C:\Users\사용자ID\OneDrive\바탕 화면\coming-soon"
 
 # 의존성 설치 (최초 1회만)
 npm install --legacy-peer-deps
@@ -437,7 +437,7 @@ useEffect(() => {
 이제 프로젝트를 실행하고 개발할 준비가 되었습니다!
 
 ```bash
-cd "C:\Users\박성호\OneDrive\바탕 화면\coming-soon"
+cd "C:\Users\사용자 ID\OneDrive\바탕 화면\coming-soon"
 npm run dev
 ```
 
