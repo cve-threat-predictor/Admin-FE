@@ -115,10 +115,10 @@ export function Sidebar() {
 }
 
 const navItems = [
-  { name: "Dashboard", href: "/dashboard/dashboard", icon: LayoutDashboard },
-  { name: "CVE History", href: "/dashboard/cve-history", icon: Database, badge: "8" },
+  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { name: "CVE History", href: "/cve-history", icon: Database, badge: "8" },
   { name: "Transactions", href: "/transactions", icon: Wallet },
-  { name: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
+  { name: "Analytics", href: "/analytics", icon: BarChart3 },
 ]
 
 const footerItems = [
