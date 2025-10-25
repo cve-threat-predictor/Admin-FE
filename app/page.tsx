@@ -1,7 +1,5 @@
-"use client"
+import { redirect } from "next/navigation"
 
-import ComingSoonPage from "../coming-soon"
-
-export default function SyntheticV0PageForDeployment() {
-  return <ComingSoonPage />
+export default function Home() {
+  redirect("/dashboard")
 }

@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useSidebar } from "./sidebar-provider"
 import { cn } from "@/lib/utils"
-import { LayoutDashboard, Users, Wallet, BarChart3, Settings, HelpCircle, LogOut, Menu } from "lucide-react"
+import { LayoutDashboard, Database, Wallet, BarChart3, Settings, HelpCircle, LogOut, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Sidebar() {
@@ -116,7 +116,7 @@ export function Sidebar() {
 
 const navItems = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Users", href: "/users", icon: Users, badge: "8" },
+  { name: "CVE History", href: "/cve-history", icon: Database, badge: "8" },
   { name: "Transactions", href: "/transactions", icon: Wallet },
   { name: "Analytics", href: "/analytics", icon: BarChart3 },
 ]
