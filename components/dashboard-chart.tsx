@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts"
 
 export function DashboardChart() {
   const [mounted, setMounted] = useState(false)
@@ -21,78 +21,68 @@ export function DashboardChart() {
   return (
     <div className="h-[350px] w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 20 }}>
-          <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+        <BarChart data={cveData} margin={{ top: 10, right: 10, left: 10, bottom: 20 }}>
+          <XAxis dataKey="cveId" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
           <YAxis
             stroke="#888888"
             fontSize={12}
             tickLine={false}
             axisLine={false}
-            tickFormatter={(value) => `R${value}`}
+            tickFormatter={(value) => `${value}`}
           />
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <Tooltip
-            formatter={(value) => [`R${value}`, "Amount"]}
             contentStyle={{
               backgroundColor: "hsl(var(--background))",
               borderColor: "hsl(var(--border))",
               borderRadius: "var(--radius)",
             }}
           />
-          <Bar dataKey="total" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+          <Legend />
+          <Bar dataKey="cvss" fill="hsl(var(--chart-1))" radius={[4, 4, 0, 0]} name="CVSS Score" />
+          <Bar dataKey="epss" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} name="EPSS (x10)" />
+          <Bar dataKey="risk" fill="hsl(var(--chart-3))" radius={[4, 4, 0, 0]} name="Risk Level" />
         </BarChart>
       </ResponsiveContainer>
     </div>
   )
 }
 
-const data = [
+const cveData = [
   {
-    name: "Jan",
-    total: 45000,
+    cveId: "CVE-2024-1234",
+    cvss: 7.8,
+    epss: 8.5, // EPSS multiplied by 10 for visibility (0.85 -> 8.5)
+    risk: 9, // Critical = 9
   },
   {
-    name: "Feb",
-    total: 63500,
+    cveId: "CVE-2024-5678",
+    cvss: 9.1,
+    epss: 9.2,
+    risk: 10, // Critical = 10
   },
   {
-    name: "Mar",
-    total: 58200,
+    cveId: "CVE-2024-9012",
+    cvss: 6.5,
+    epss: 4.3,
+    risk: 7, // High = 7
   },
   {
-    name: "Apr",
-    total: 72800,
+    cveId: "CVE-2023-8765",
+    cvss: 5.4,
+    epss: 2.1,
+    risk: 5, // Medium = 5
   },
   {
-    name: "May",
-    total: 85600,
+    cveId: "CVE-2023-4321",
+    cvss: 8.2,
+    epss: 7.8,
+    risk: 8, // High = 8
   },
   {
-    name: "Jun",
-    total: 92400,
-  },
-  {
-    name: "Jul",
-    total: 105200,
-  },
-  {
-    name: "Aug",
-    total: 91000,
-  },
-  {
-    name: "Sep",
-    total: 97500,
-  },
-  {
-    name: "Oct",
-    total: 110800,
-  },
-  {
-    name: "Nov",
-    total: 142500,
-  },
-  {
-    name: "Dec",
-    total: 168000,
+    cveId: "CVE-2023-1111",
+    cvss: 4.3,
+    epss: 1.5,
+    risk: 4, // Medium = 4
   },
 ]
